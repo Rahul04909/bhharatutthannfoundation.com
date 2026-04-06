@@ -36,6 +36,9 @@
     <!-- Include Awards Component -->
     <?php include_once 'components/awards.php'; ?>
 
+    <!-- Include Ads Banner Component -->
+    <?php include_once 'components/ads.php'; ?>
+
     <!-- Include Features Component -->
     <?php include_once 'components/features.php'; ?>
 

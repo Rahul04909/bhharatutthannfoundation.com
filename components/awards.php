@@ -35,23 +35,35 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        font-size: 26px;
-        margin-bottom: 25px;
+        font-size: 24px;
+        margin-bottom: 30px;
         line-height: 1.3;
     }
     
-    .award-block p {
-        color: #ffffff; /* White text for descriptions */
-        font-size: 16px;
-        line-height: 1.8;
-        margin-bottom: 0;
-        opacity: 0.95;
-        font-weight: 400;
+    .award-img-box {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .award-img-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
     }
     
     /* Hover effect */
+    .award-block:hover .award-img-box {
+        transform: translateY(-10px) scale(1.05);
+    }
+    
     .award-block:hover {
-        opacity: 1;
         filter: brightness(1.1);
     }
 
@@ -67,6 +79,9 @@
         .award-block h3 {
             font-size: 22px;
         }
+        .award-img-box {
+            max-width: 220px;
+        }
     }
 </style>
 
@@ -77,24 +92,30 @@
             <!-- Award 1 - Dark Blue -->
             <div class="col-lg-4 col-md-6">
                 <div class="award-block award-block-dark">
-                    <h3>Excellence in Social Service</h3>
-                    <p>Recognized for outstanding contribution toward uplifting underprivileged communities and actively promoting comprehensive social welfare across Bharat.</p>
+                    <h3>Excellence Service</h3>
+                    <div class="award-img-box">
+                        <img src="assets/images/awards/award-1.jpg" alt="Excellence in Social Service">
+                    </div>
                 </div>
             </div>
             
             <!-- Award 2 - Teal -->
             <div class="col-lg-4 col-md-6">
                 <div class="award-block award-block-teal">
-                    <h3>Community Empowerment</h3>
-                    <p>Honored for consistent efforts in organizing educational camps, health drives, and empowering marginalized individuals through skill-building programs.</p>
+                    <h3>Empowerment Award</h3>
+                    <div class="award-img-box">
+                        <img src="assets/images/awards/award-2.jpg" alt="Community Empowerment">
+                    </div>
                 </div>
             </div>
             
             <!-- Award 3 - Dark Blue -->
             <div class="col-lg-4 col-md-12">
                 <div class="award-block award-block-dark">
-                    <h3>Cultural Heritage Recognition</h3>
-                    <p>Awarded for unwavering dedication to preserving India's timeless cultural heritage through impactful, values-based initiatives and mass awareness campaigns.</p>
+                    <h3>Heritage Award</h3>
+                    <div class="award-img-box">
+                        <img src="assets/images/awards/award-3.jpg" alt="Cultural Heritage Recognition">
+                    </div>
                 </div>
             </div>
             

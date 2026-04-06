@@ -3,11 +3,37 @@
 ?>
 <style>
     .awards-section-full {
-        padding: 0;
+        padding: 50px 0 0;
         margin: 0;
         width: 100%;
         overflow: hidden;
         font-family: 'Poppins', sans-serif;
+    }
+    
+    .awards-title-box {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .awards-title-box h2 {
+        color: #051b60;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .awards-title-box h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: #f96302;
     }
     
     .award-block {
@@ -86,6 +112,9 @@
 </style>
 
 <section class="awards-section-full">
+    <div class="awards-title-box">
+        <h2>Our Awards & Recognition</h2>
+    </div>
     <div class="container-fluid p-0">
         <div class="row g-0 align-items-stretch">
             

@@ -1,150 +1,117 @@
-<?php
-// Features Component
-?>
 <style>
-    /* Professional Serif font for the quote */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,600&display=swap');
-    
-    .features-section {
-        background-color: #129af6; /* Vibrant blue matching the sample */
-        color: #ffffff;
-        padding: 60px 0 40px;
-        font-family: 'Poppins', 'Inter', sans-serif;
+    .features-section-full {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+        border-top: 1px solid rgba(255,255,255,0.1);
     }
     
-    .feature-card {
-        padding: 20px 15px;
-        border-radius: 8px;
-        height: 100%;
-    }
-    
-    .feature-icon {
-        color: #ff9800; /* Distinct orange icon color */
-        font-size: 45px;
-        margin-bottom: 20px;
-    }
-    
-    .feature-title {
-        font-weight: 600;
-        font-size: 20px;
-        margin-bottom: 15px;
-        letter-spacing: 0.5px;
-    }
-    
-    .feature-desc {
-        font-size: 14px;
-        line-height: 1.7;
-        font-weight: 400;
-        opacity: 0.95;
-    }
-    
-    .features-quote {
-        margin-top: 50px;
+    .feature-block {
+        padding: 100px 50px;
         text-align: center;
-        font-family: 'Playfair Display', serif; /* Professional quote font */
-        font-size: 22px;
-        font-style: italic;
-        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        min-height: 450px;
+        transition: all 0.4s ease;
         position: relative;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
     
-    /* Clean separator line above the quote */
-    .features-quote::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 150px;
-        height: 2px;
-        background-color: rgba(255, 255, 255, 0.4);
+    .feature-block-orange {
+        background-color: #f96302; /* Foundation Orange */
+    }
+    
+    .feature-block-dark {
+        background-color: #051b60; /* Foundation Dark Blue */
+    }
+    
+    .feature-icon-box {
+        font-size: 60px;
+        color: #ffffff;
+        margin-bottom: 30px;
+    }
+    
+    .feature-block h3 {
+        color: #ffffff;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 24px;
+        margin-bottom: 25px;
+        line-height: 1.3;
+    }
+    
+    .feature-block p {
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 0;
+        opacity: 0.95;
+        font-weight: 400;
+    }
+    
+    .feature-block:hover {
+        filter: brightness(1.1);
+        z-index: 2;
     }
 
-    /* Mobile Responsive Enhancements */
-    @media (max-width: 768px) {
-        .features-section {
-            padding: 40px 0 30px;
-        }
-        .feature-card {
-            margin-bottom: 25px;
-            text-align: center; /* Centering content on mobile for better aesthetics */
-        }
-        .feature-icon {
-            font-size: 38px;
-        }
-        .feature-title {
-            font-size: 18px;
-        }
-        .features-quote {
-            font-size: 18px;
-            margin-top: 15px;
-            padding-top: 25px;
-            line-height: 1.5;
+    /* Mobile handling */
+    @media (max-width: 991px) {
+        .feature-block {
+            padding: 80px 30px;
+            min-height: auto;
         }
     }
     
-    /* Tablet specific */
-    @media (min-width: 769px) and (max-width: 991px) {
-        .feature-desc {
-            font-size: 13px;
+    @media (max-width: 768px) {
+        .feature-block h3 {
+            font-size: 22px;
+        }
+        .feature-icon-box {
+            font-size: 50px;
         }
     }
 </style>
 
-<section class="features-section">
-    <div class="container">
-        <div class="row">
-            <!-- Feature 1: Holistic Development -->
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Icon matching the building -->
+<section class="features-section-full">
+    <div class="container-fluid p-0">
+        <div class="row g-0 align-items-stretch">
+            
+            <!-- Feature 1 - Orange -->
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="feature-block feature-block-orange">
+                    <div class="feature-icon-box">
                         <i class="fa-regular fa-building"></i>
                     </div>
-                    <div class="feature-title text-uppercase">Holistic Development:</div>
-                    <div class="feature-desc">
-                        The Foundation supports women empowerment, environmental care, and skill-building programs. These efforts aim to create strong, self-reliant communities and promote a balanced, caring, and inclusive society.
-                    </div>
+                    <h3>Holistic Development</h3>
+                    <p>The Foundation supports women empowerment, environmental care, and skill-building programs. These efforts aim to create strong, self-reliant communities and promote a balanced, caring, and inclusive society.</p>
                 </div>
             </div>
             
-            <!-- Feature 2: Cultural Preservation -->
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Icon matching the wheelchair/accessibility -->
+            <!-- Feature 2 - Dark Blue -->
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="feature-block feature-block-dark">
+                    <div class="feature-icon-box">
                         <i class="fa-solid fa-wheelchair"></i>
                     </div>
-                    <div class="feature-title">Cultural Preservation:</div>
-                    <div class="feature-desc">
-                        Rooted in India's rich heritage, the Foundation promotes cultural values (sanskar) and selfless service (seva). Programs like Gau Seva (cow care) and cultural camps help keep traditions alive while encouraging unity, strong leadership, and respect for our culture.
-                    </div>
+                    <h3>Cultural Preservation</h3>
+                    <p>Rooted in India's rich heritage, the Foundation promotes cultural values and selfless service. Programs like Gau Seva and cultural camps help keep traditions alive while encouraging unity and leadership.</p>
                 </div>
             </div>
             
-            <!-- Feature 3: Empowering Communities -->
-            <div class="col-lg-4 col-md-12">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Icon matching the book -->
+            <!-- Feature 3 - Orange -->
+            <div class="col-lg-4 col-md-12 text-center">
+                <div class="feature-block feature-block-orange">
+                    <div class="feature-icon-box">
                         <i class="fa-solid fa-book"></i>
                     </div>
-                    <div class="feature-title">Empowering Communities:</div>
-                    <div class="feature-desc">
-                        The Bharat Utthann Foundation focuses on helping underprivileged communities by providing education, healthcare, and job opportunities. These efforts aim to give people dignity, independence, and the chance to build a better future for themselves and their families.
-                    </div>
+                    <h3>Empowering Communities</h3>
+                    <p>We focus on helping underprivileged communities by providing education, healthcare, and job opportunities. These efforts aim to give people dignity, independence, and the chance to build a better future.</p>
                 </div>
             </div>
-        </div>
-        
-        <!-- Bottom Quote Section -->
-        <div class="row">
-            <div class="col-12">
-                <div class="features-quote">
-                    An organization dedicated to uplifting communities and serving the nation with care and selfless service.
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>

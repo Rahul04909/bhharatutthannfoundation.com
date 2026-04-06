@@ -45,6 +45,9 @@
     <!-- Include Our Work Component -->
     <?php include_once 'components/our-work.php'; ?>
 
+    <!-- Include Second Ads Banner Component -->
+    <?php include_once 'components/ads-2.php'; ?>
+
     <!-- Include Contact Component -->
     <?php include_once 'components/contact.php'; ?>
 

@@ -1,275 +1,211 @@
 <?php
-// Our Work Component (Services Slider)
+// Our Work Component (Full-Width Boxed Slider)
 
 $services = [
     [
         "title" => "Women Empowerment",
         "desc" => "Empowering women through education, skill development, and opportunities for independence and leadership.",
-        "img" => "https://picsum.photos/seed/women_empower/600/400"
+        "img" => "https://picsum.photos/seed/women_empower/600/600"
     ],
     [
         "title" => "Health Checkup Camps",
         "desc" => "Providing free medical checkups and health awareness to underserved communities.",
-        "img" => "https://picsum.photos/seed/health_camp/600/400"
+        "img" => "https://picsum.photos/seed/health_camp/600/600"
     ],
     [
         "title" => "Water Conservation",
         "desc" => "Promoting sustainable water use practices to conserve and protect water resources.",
-        "img" => "https://picsum.photos/seed/water_save/600/400"
+        "img" => "https://picsum.photos/seed/water_save/600/600"
     ],
     [
         "title" => "Plantation Drive",
         "desc" => "Encouraging environmental sustainability through tree planting and green initiatives.",
-        "img" => "https://picsum.photos/seed/trees/600/400"
+        "img" => "https://picsum.photos/seed/trees/600/600"
     ],
     [
         "title" => "Self Reliance in Women",
         "desc" => "Equipping women with skills and resources to become independent and financially self-sufficient.",
-        "img" => "https://picsum.photos/seed/self_reliance/600/400"
+        "img" => "https://picsum.photos/seed/self_reliance/600/600"
     ],
     [
         "title" => "Self Defence Camp",
         "desc" => "Teaching women and girls practical self-defense skills to ensure personal safety and confidence.",
-        "img" => "https://picsum.photos/seed/defence/600/400"
+        "img" => "https://picsum.photos/seed/defence/600/600"
     ],
     [
         "title" => "Skill Development",
         "desc" => "Providing vocational training and skills to youth for better job opportunities and self-reliance.",
-        "img" => "https://picsum.photos/seed/skill_dev/600/400"
+        "img" => "https://picsum.photos/seed/skill_dev/600/600"
     ],
     [
         "title" => "Handicapped Assistance",
         "desc" => "Supporting differently-abled individuals with mobility aids, healthcare, and access to opportunities.",
-        "img" => "https://picsum.photos/seed/handicap/600/400"
+        "img" => "https://picsum.photos/seed/handicap/600/600"
     ],
     [
         "title" => "Cultural Camps",
         "desc" => "Preserving and promoting India’s cultural heritage through traditional arts, crafts, and values.",
-        "img" => "https://picsum.photos/seed/culture_camp/600/400"
+        "img" => "https://picsum.photos/seed/culture_camp/600/600"
     ],
     [
         "title" => "Swachh Bharat Abhiyan",
         "desc" => "Promoting cleanliness, hygiene, and sanitation in communities for a healthier environment.",
-        "img" => "https://picsum.photos/seed/swachh/600/400"
+        "img" => "https://picsum.photos/seed/swachh/600/600"
     ],
     [
         "title" => "Blood Donation Camp",
         "desc" => "Organizing voluntary blood donation drives to save lives and support healthcare needs.",
-        "img" => "https://picsum.photos/seed/blood_donate/600/400"
+        "img" => "https://picsum.photos/seed/blood_donate/600/600"
     ],
     [
         "title" => "Covid 19",
         "desc" => "Bharat Utthann Foundation supports COVID-19 awareness, relief, and recovery efforts.",
-        "img" => "https://picsum.photos/seed/covid19/600/400"
+        "img" => "https://picsum.photos/seed/covid19/600/600"
     ]
 ];
 ?>
 <style>
-    .our-work-section {
-        background-color: #f4f6f9;
-        padding: 80px 0;
-        font-family: 'Poppins', 'Inter', sans-serif;
+    .our-work-section-full {
+        padding: 50px 0 0;
+        background-color: #ffffff;
+        font-family: 'Poppins', sans-serif;
     }
     
-    .our-work-header {
+    .work-title-box {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     
-    .our-work-header h2 {
-        color: #051b60; /* Dark blue theme */
+    .work-title-box h2 {
+        color: #051b60;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 1.5px;
         position: relative;
         display: inline-block;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
     }
     
-    /* Elegant underline matching theme */
-    .our-work-header h2::after {
+    .work-title-box h2::after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 80px;
+        width: 60px;
         height: 3px;
-        background-color: #ffb700; /* Yellow Theme */
-        border-radius: 2px;
+        background-color: #f96302;
     }
     
-    .service-card {
-        background: #ffffff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        height: 100%; /* Restored uniform slider height */
+    .boxed-service-card {
+        background: #051b60; /* Dark Blue matching boxed theme */
+        height: 100%;
         display: flex;
         flex-direction: column;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .service-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    
-    .service-img-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 60%; /* Aspect ratio to maintain image grid perfectly */
         overflow: hidden;
-        background-color: #e0e0e0;
+        transition: all 0.4s ease;
     }
     
-    .service-img-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .boxed-img-wrapper {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+    }
+    
+    .boxed-img-wrapper img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.6s ease;
     }
     
-    .service-card:hover .service-img-wrapper img {
-        transform: scale(1.08); /* Premium hover zoom */
-    }
-    
-    .service-content {
-        padding: 25px;
+    .boxed-content {
+        padding: 40px 30px;
+        text-align: center;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        justify-content: center;
     }
     
-    .service-title {
-        color: #051b60;
-        font-size: 18px;
+    .boxed-title {
+        color: #f96302; /* Theme Orange */
+        font-size: 20px;
         font-weight: 700;
-        margin-bottom: 12px;
-        line-height: 1.3;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
     }
     
-    .service-desc {
-        color: #555555;
+    .boxed-desc {
+        color: #ffffff;
         font-size: 14px;
         line-height: 1.6;
-        margin-bottom: 25px;
-        /* Uniform height enforcing */
-        min-height: 68px; /* Approx 3 lines of 1.6 line-height at 14px */
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        opacity: 0.9;
+        margin-bottom: 0;
     }
     
-    .service-btn {
-        margin-top: auto; /* Perfectly aligns all buttons to the bottom */
-        display: inline-block;
-        padding: 10px 22px;
-        background-color: #f96302; /* Vibrant Orange Theme */
+    .boxed-service-card:hover {
+        filter: brightness(1.1);
+    }
+    
+    .boxed-service-card:hover .boxed-img-wrapper img {
+        transform: scale(1.1);
+    }
+    
+    /* Swiper custom arrows */
+    .swiper-button-white {
         color: #ffffff;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14px;
-        border-radius: 6px;
-        transition: background-color 0.3s, transform 0.2s;
-        text-transform: uppercase;
-        align-self: flex-start;
-        border: 2px solid #f96302;
-    }
-    
-    .service-btn:hover {
-        background-color: transparent;
-        color: #f96302;
-    }
-    
-    /* Swiper customized nav controls */
-    .swiper-button-next, .swiper-button-prev {
-        color: #f96302;
-        background-color: rgba(255, 255, 255, 0.95);
-        width: 45px;
-        height: 45px;
+        background: rgba(249, 99, 2, 0.8);
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        transition: background-color 0.3s, color 0.3s;
     }
-    .swiper-button-next:hover, .swiper-button-prev:hover {
-        background-color: #f96302;
-        color: #ffffff;
-    }
-    .swiper-button-next::after, .swiper-button-prev::after {
-        font-size: 20px;
+    .swiper-button-white::after {
+        font-size: 18px;
         font-weight: bold;
-    }
-    
-    .swiper-pagination-bullet-active {
-        background-color: #f96302;
-    }
-
-    .swiper-container-padding {
-        padding: 20px 10px 60px; /* Essential space for drop shadow and pagination */
-    }
-
-    /* Fix Swiper overlapping on mobile */
-    @media (max-width: 576px) {
-        .swiper-button-next, .swiper-button-prev {
-            display: none; /* Hide arrows on very small mobile devices; dots & drag are enough */
-        }
     }
 </style>
 
-<section class="our-work-section">
-    <div class="container">
-        <div class="our-work-header">
-            <h2>Our Works</h2>
-        </div>
-        
-        <!-- Swiper Initialization Container -->
-        <div class="swiper swiper-services swiper-container-padding">
+<section class="our-work-section-full">
+    <div class="work-title-box">
+        <h2>Initiatives & Works</h2>
+    </div>
+    
+    <div class="container-fluid p-0">
+        <div class="swiper swiper-boxed-work">
             <div class="swiper-wrapper">
                 <?php foreach($services as $service): ?>
                 <div class="swiper-slide h-auto">
-                    <div class="service-card">
-                        <div class="service-img-wrapper">
+                    <div class="boxed-service-card">
+                        <div class="boxed-img-wrapper">
                             <img src="<?php echo $service['img']; ?>" alt="<?php echo htmlspecialchars($service['title']); ?>">
                         </div>
-                        <div class="service-content">
-                            <h4 class="service-title"><?php echo $service['title']; ?></h4>
-                            <p class="service-desc"><?php echo $service['desc']; ?></p>
-                            <a href="#" class="service-btn">Read More</a>
+                        <div class="boxed-content">
+                            <h4 class="boxed-title"><?php echo $service['title']; ?></h4>
+                            <p class="boxed-desc"><?php echo $service['desc']; ?></p>
                         </div>
                     </div>
                 </div>
                 <?php endforeach; ?>
             </div>
             
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- Add Navigation Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <!-- Navigation -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
         </div>
     </div>
 </section>
 
-<!-- Initialize Swiper Script specifically for this component -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    var swiperOptions = {
+    new Swiper(".swiper-boxed-work", {
         slidesPerView: 1,
-        spaceBetween: 25,
+        spaceBetween: 0, // Zero space for boxed effect
         loop: true,
         autoplay: {
-            delay: 3500, // Carousel speed
+            delay: 4000,
             disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",
@@ -279,21 +215,20 @@ document.addEventListener("DOMContentLoaded", function() {
             // Mobile Landscape
             576: {
                 slidesPerView: 2,
-                spaceBetween: 20
             },
             // Tablet
             992: {
                 slidesPerView: 3,
-                spaceBetween: 30
             },
-            // Desktop
-            1200: {
+            // High-res Desktop
+            1400: {
                 slidesPerView: 4,
-                spaceBetween: 30
+            },
+            // Ultra-wide
+            1800: {
+                slidesPerView: 5,
             }
         }
-    };
-    
-    var swiper = new Swiper(".swiper-services", swiperOptions);
+    });
 });
-</script>
+</script>t>

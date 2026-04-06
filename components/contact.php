@@ -9,14 +9,16 @@
     
     .contact-map-block {
         padding: 0;
-        min-height: 600px;
+        min-height: 500px;
+        height: 100%;
         position: relative;
+        display: flex; /* Ensures iframe can fill flex height */
     }
     
     .contact-map-block iframe {
         width: 100%;
         height: 100%;
-        min-height: 600px;
+        flex-grow: 1; /* Force filling the parent's stretched height */
         border: 0;
         display: block;
     }
@@ -24,7 +26,7 @@
     .contact-form-block {
         background-color: #051b60; /* Foundation Dark Blue */
         color: #ffffff;
-        padding: 80px 60px;
+        padding: 60px 60px; /* Reduced padding from 80px */
         display: flex;
         flex-direction: column;
         justify-content: center;

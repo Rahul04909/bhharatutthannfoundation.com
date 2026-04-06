@@ -1,74 +1,77 @@
 <?php
 // Hero Slider Component
-// Autoplaying Carousel similar to e-commerce platforms (Flipkart, Amazon)
+// Autoplaying Carousel similar to e-commerce platforms
+$hero_images = [
+    ['src' => 'assets/images/hero/hero-1.png', 'alt' => 'Foundation Banner 1'],
+    ['src' => 'assets/images/hero/hero-2.png', 'alt' => 'Foundation Banner 2'],
+    ['src' => 'assets/images/hero/hero-3.png', 'alt' => 'Foundation Banner 3'],
+];
 ?>
 <style>
     .hero-carousel {
         width: 100%;
         overflow: hidden;
+        background-color: #f0f0f0;
     }
     
     .hero-carousel .carousel-item img {
         width: 100%;
-        /* Setting a default min-height or aspect ratio can help keep it consistent */
         height: auto;
         object-fit: cover;
-        /* Desktop height */
-        max-height: 500px;
+        /* Desktop optimal height for banners */
+        max-height: 600px;
+        display: block;
     }
 
-    /* Mobile specific adjustments */
+    /* Mobile specific adjustments to keep banners looking good */
     @media (max-width: 768px) {
         .hero-carousel .carousel-item img {
-            /* On mobile, you might want to constrain the height or change aspect ratio */
-            min-height: 200px;
-            max-height: 300px;
+            min-height: 250px;
+            max-height: 350px;
             object-fit: cover;
         }
     }
     
-    /* Customising Carousel Control Colors/Shadows for better visibility */
     .hero-carousel .carousel-control-prev-icon,
     .hero-carousel .carousel-control-next-icon {
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for controls */
+        background-color: rgba(5, 27, 96, 0.6); /* Use Dark Blue from theme */
         border-radius: 50%;
-        padding: 20px;
-        background-size: 50%; /* Adjusted icon size within the circle */
+        width: 45px;
+        height: 45px;
+        background-size: 50%;
+    }
+    
+    .carousel-indicators [data-bs-target] {
+        background-color: #f96302; /* Use theme orange for indicators */
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin: 0 5px;
     }
 </style>
 
-<!-- Bootstrap Carousel -->
-<!-- data-bs-ride="carousel" ensures autoplay. data-bs-interval defines the time between slides in ms -->
-<div id="heroSlider" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="4000">
+<div id="heroSlider" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="5000">
     
-    <!-- Indicators (Optional: small dots at the bottom, typical for e-commerce) -->
+    <!-- Dynamic Indicators -->
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <?php foreach($hero_images as $index => $image): ?>
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="<?php echo $index; ?>" 
+                <?php echo ($index === 0) ? 'class="active" aria-current="true"' : ''; ?> 
+                aria-label="Slide <?php echo ($index + 1); ?>">
+            </button>
+        <?php endforeach; ?>
     </div>
 
-    <!-- The Slides -->
+    <!-- Dynamic Slides Inner -->
     <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-            <!-- Replace src with your actual slider image (e.g., assets/images/slider1.jpg) -->
-            <!-- Using high-res placeholder images for demonstration -->
-            <img src="https://picsum.photos/1920/600?random=1" class="d-block w-100" alt="Slider Banner 1">
-        </div>
-        
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-            <img src="https://picsum.photos/1920/600?random=2" class="d-block w-100" alt="Slider Banner 2">
-        </div>
-        
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-            <img src="https://picsum.photos/1920/600?random=3" class="d-block w-100" alt="Slider Banner 3">
-        </div>
+        <?php foreach($hero_images as $index => $image): ?>
+            <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
+                <img src="<?php echo $image['src']; ?>" class="d-block w-100" alt="<?php echo $image['alt']; ?>">
+            </div>
+        <?php endforeach; ?>
     </div>
 
-    <!-- Navigation Controls (Previous/Next Arrows) -->
+    <!-- Navigation Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>

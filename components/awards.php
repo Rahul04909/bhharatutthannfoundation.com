@@ -2,170 +2,109 @@
 // Awards Component
 ?>
 <style>
-    .awards-section {
-        background-color: #fcfcfc; /* Very light background for contrast */
-        padding: 80px 0;
-        font-family: 'Poppins', 'Inter', sans-serif;
+    .awards-section-full {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+        font-family: 'Poppins', sans-serif;
     }
     
-    .awards-header {
+    .award-block {
+        padding: 80px 40px;
         text-align: center;
-        margin-bottom: 50px;
+        transition: background 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 350px;
     }
     
-    .awards-header h2 {
-        color: #051b60; /* Dark blue theme */
+    /* Alternating Colors from the Sample */
+    .award-block-dark {
+        background-color: #051b60; /* Foundation Dark Blue */
+    }
+    
+    .award-block-teal {
+        background-color: #1e7069; /* Sample Teal/Green */
+    }
+    
+    .award-block h3 {
+        color: #f96302; /* Vibrant Orange for Titles */
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 15px;
+        letter-spacing: 1.5px;
+        font-size: 24px;
+        margin-bottom: 25px;
+        line-height: 1.3;
     }
     
-    /* Decorative underline */
-    .awards-header h2::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background-color: #f96302; /* Vibrant orange underline */
-        border-radius: 2px;
-    }
-    
-    .award-card {
-        background: #ffffff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .award-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-    }
-    
-    /* Image wrapper enforcing consistent height */
-    .award-img-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 70%; /* Box aspect ratio */
-        overflow: hidden;
-        background-color: #ffffff; 
-        border-bottom: 1px solid #f4f4f4;
-    }
-    
-    /* Using object-fit contain so certificates or trophies don't get cropped out */
-    .award-img-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain; 
-        padding: 15px;
-        transition: transform 0.5s ease;
-    }
-    
-    .award-card:hover .award-img-wrapper img {
-        transform: scale(1.05); /* Elegant zoom on hovering over the card */
-    }
-    
-    .award-content {
-        padding: 30px 25px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .award-title {
-        color: #051b60; /* Dark Blue */
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        line-height: 1.4;
-    }
-    
-    .award-desc {
-        color: #555555;
-        font-size: 15px;
-        line-height: 1.6;
-        flex-grow: 1;
+    .award-block p {
+        color: #ffffff; /* White text for descriptions */
+        font-size: 16px;
+        line-height: 1.7;
         margin-bottom: 0;
+        opacity: 0.9;
         font-weight: 400;
     }
     
-    /* Mobile responsive breakpoints */
+    /* Hover effect for interactivity */
+    .award-block:hover {
+        opacity: 0.95;
+        filter: brightness(1.1);
+    }
+
+    /* Mobile handling - Stacking and layout adjustments */
     @media (max-width: 991px) {
-        .award-card {
-            margin-bottom: 30px;
+        .award-block {
+            padding: 60px 30px;
+            min-height: auto;
         }
     }
+    
     @media (max-width: 768px) {
-        .awards-section {
-            padding: 50px 0 20px;
+        .award-block h3 {
+            font-size: 20px;
         }
-        .awards-header h2 {
-            font-size: 26px;
+        .award-block p {
+            font-size: 15px;
         }
     }
 </style>
 
-<section class="awards-section">
-    <div class="container">
-        <!-- Section Heading -->
-        <div class="awards-header">
-            <h2>Our Awards & Recognitions</h2>
-        </div>
-        
-        <!-- Horizontal Grid of Awards -->
-        <div class="row align-items-stretch">
+<section class="awards-section-full">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
             
             <!-- Award 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="award-card">
-                    <div class="award-img-wrapper">
-                        <!-- Loaded from assets/images/awards -->
-                        <img src="assets/images/awards/award-1.jpg" alt="Excellence in Social Service">
-                    </div>
-                    <div class="award-content">
-                        <h4 class="award-title">Excellence in Social Service</h4>
-                        <p class="award-desc">Recognized for outstanding contribution toward uplifting underprivileged communities and actively promoting comprehensive social welfare across the region.</p>
-                    </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="award-block award-block-dark">
+                    <h3>Excellence in Social Service</h3>
+                    <p>Recognized for outstanding contribution toward uplifting underprivileged communities and actively promoting comprehensive social welfare across Bharat.</p>
                 </div>
             </div>
             
             <!-- Award 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="award-card">
-                    <div class="award-img-wrapper">
-                        <img src="assets/images/awards/award-2.jpg" alt="Community Empowerment Award">
-                    </div>
-                    <div class="award-content">
-                        <h4 class="award-title">Community Empowerment Award</h4>
-                        <p class="award-desc">Honored for consistent efforts in organizing educational camps, health drives, and empowering marginalized individuals through multi-faceted skill building programs.</p>
-                    </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="award-block award-block-teal">
+                    <h3>Community Empowerment</h3>
+                    <p>Honored for consistent efforts in organizing educational camps, health drives, and empowering marginalized individuals through skill-building programs.</p>
                 </div>
             </div>
             
             <!-- Award 3 -->
-            <div class="col-lg-4 col-md-12">
-                <div class="award-card">
-                    <div class="award-img-wrapper">
-                        <img src="assets/images/awards/award-3.jpg" alt="Cultural Heritage Recognition">
-                    </div>
-                    <div class="award-content">
-                        <h4 class="award-title">Cultural Heritage Recognition</h4>
-                        <p class="award-desc">Awarded for unwavering dedication to preserving India's timeless cultural heritage through impactful, values-based initiatives and mass awareness campaigns.</p>
-                    </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="award-block award-block-dark">
+                    <h3>Cultural Heritage Recognition</h3>
+                    <p>Awarded for unwavering dedication to preserving India's timeless cultural heritage through impactful, values-based initiatives and mass awareness.</p>
+                </div>
+            </div>
+            
+            <!-- Award 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="award-block award-block-teal">
+                    <h3>National Visionary Award</h3>
+                    <p>Celebrated for innovative leadership in social reforms and creating scalable models for rural development and sustainable living across the nation.</p>
                 </div>
             </div>
             

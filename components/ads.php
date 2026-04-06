@@ -1,23 +1,33 @@
 <style>
     .ad-banner-section {
         width: 100%;
-        margin: 30px 0;
-        overflow: hidden;
-        background-color: #f0f0f0; /* Light placeholder color */
-        min-height: 250px; /* Ensure it takes space while loading */
-        display: block;
+        margin: 50px 0;
+        background-color: #eee;
+        border: 2px solid #f96302;
         position: relative;
+        overflow: hidden;
     }
     
     .ad-banner-img {
-        width: 100% !important;
-        height: auto !important;
-        display: block !important;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
+        width: 100%;
+        height: auto;
+        display: block;
+        min-height: 200px;
+    }
+    
+    .debug-label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(249, 99, 2, 0.8);
+        color: white;
+        padding: 5px 15px;
+        font-weight: bold;
+        z-index: 100;
     }
 </style>
 
 <div class="ad-banner-section">
-    <img src="assets/images/banners/women-empowerment.jpeg" alt="Women Empowerment Banner" class="ad-banner-img" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#ffebee';">
+    <div class="debug-label">Banner Component</div>
+    <img src="assets/images/banners/women-empowerment.jpeg" alt="Empowerment Banner" class="ad-banner-img">
 </div>

@@ -5,7 +5,7 @@ $services = [
     [
         "title" => "Women Empowerment",
         "desc" => "Empowering women through education, skill development, and opportunities for independence and leadership.",
-        "img" => "https://picsum.photos/seed/women_empower/600/600"
+        "img" => "../assets/images/frontend/women-empowerment.jpeg"
     ],
     [
         "title" => "Health Checkup Camps",
@@ -15,12 +15,12 @@ $services = [
     [
         "title" => "Water Conservation",
         "desc" => "Promoting sustainable water use practices to conserve and protect water resources.",
-        "img" => "https://picsum.photos/seed/water_save/600/600"
+        "img" => "../assets/images/frontend/save-water.jpeg"
     ],
     [
         "title" => "Plantation Drive",
         "desc" => "Encouraging environmental sustainability through tree planting and green initiatives.",
-        "img" => "https://picsum.photos/seed/trees/600/600"
+        "img" => "../assets/images/frontend/tree-plantation.jpeg"
     ],
     [
         "title" => "Self Reliance in Women",
@@ -55,7 +55,7 @@ $services = [
     [
         "title" => "Blood Donation Camp",
         "desc" => "Organizing voluntary blood donation drives to save lives and support healthcare needs.",
-        "img" => "https://picsum.photos/seed/blood_donate/600/600"
+        "img" => "../assets/images/frontend/blood-donation-camp.jpeg"
     ],
     [
         "title" => "Covid 19",
@@ -70,12 +70,12 @@ $services = [
         background-color: #ffffff;
         font-family: 'Poppins', sans-serif;
     }
-    
+
     .work-title-box {
         text-align: center;
         margin-bottom: 40px;
     }
-    
+
     .work-title-box h2 {
         color: #051b60;
         font-weight: 700;
@@ -85,7 +85,7 @@ $services = [
         display: inline-block;
         padding-bottom: 10px;
     }
-    
+
     .work-title-box h2::after {
         content: '';
         position: absolute;
@@ -96,29 +96,30 @@ $services = [
         height: 3px;
         background-color: #f96302;
     }
-    
+
     .boxed-service-card {
-        background: #051b60; /* Dark Blue matching boxed theme */
+        background: #051b60;
+        /* Dark Blue matching boxed theme */
         height: 100%;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         transition: all 0.4s ease;
     }
-    
+
     .boxed-img-wrapper {
         width: 100%;
         aspect-ratio: 1 / 1;
         overflow: hidden;
     }
-    
+
     .boxed-img-wrapper img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.6s ease;
     }
-    
+
     .boxed-content {
         padding: 40px 30px;
         text-align: center;
@@ -127,16 +128,17 @@ $services = [
         flex-direction: column;
         justify-content: center;
     }
-    
+
     .boxed-title {
-        color: #f96302; /* Theme Orange */
+        color: #f96302;
+        /* Theme Orange */
         font-size: 20px;
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 15px;
         letter-spacing: 1px;
     }
-    
+
     .boxed-desc {
         color: #ffffff;
         font-size: 14px;
@@ -144,15 +146,15 @@ $services = [
         opacity: 0.9;
         margin-bottom: 0;
     }
-    
+
     .boxed-service-card:hover {
         filter: brightness(1.1);
     }
-    
+
     .boxed-service-card:hover .boxed-img-wrapper img {
         transform: scale(1.1);
     }
-    
+
     /* Swiper custom arrows */
     .swiper-button-white {
         color: #ffffff;
@@ -161,6 +163,7 @@ $services = [
         height: 50px;
         border-radius: 50%;
     }
+
     .swiper-button-white::after {
         font-size: 18px;
         font-weight: bold;
@@ -171,25 +174,26 @@ $services = [
     <div class="work-title-box">
         <h2>Initiatives & Works</h2>
     </div>
-    
+
     <div class="container-fluid p-0">
         <div class="swiper swiper-boxed-work">
             <div class="swiper-wrapper">
-                <?php foreach($services as $service): ?>
-                <div class="swiper-slide h-auto">
-                    <div class="boxed-service-card">
-                        <div class="boxed-img-wrapper">
-                            <img src="<?php echo $service['img']; ?>" alt="<?php echo htmlspecialchars($service['title']); ?>">
-                        </div>
-                        <div class="boxed-content">
-                            <h4 class="boxed-title"><?php echo $service['title']; ?></h4>
-                            <p class="boxed-desc"><?php echo $service['desc']; ?></p>
+                <?php foreach ($services as $service): ?>
+                    <div class="swiper-slide h-auto">
+                        <div class="boxed-service-card">
+                            <div class="boxed-img-wrapper">
+                                <img src="<?php echo $service['img']; ?>"
+                                    alt="<?php echo htmlspecialchars($service['title']); ?>">
+                            </div>
+                            <div class="boxed-content">
+                                <h4 class="boxed-title"><?php echo $service['title']; ?></h4>
+                                <p class="boxed-desc"><?php echo $service['desc']; ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
             </div>
-            
+
             <!-- Navigation -->
             <div class="swiper-button-next swiper-button-white"></div>
             <div class="swiper-button-prev swiper-button-white"></div>
@@ -198,37 +202,37 @@ $services = [
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    new Swiper(".swiper-boxed-work", {
-        slidesPerView: 1,
-        spaceBetween: 0, // Zero space for boxed effect
-        loop: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            // Mobile Landscape
-            576: {
-                slidesPerView: 2,
+    document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".swiper-boxed-work", {
+            slidesPerView: 1,
+            spaceBetween: 0, // Zero space for boxed effect
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
             },
-            // Tablet
-            992: {
-                slidesPerView: 3,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
-            // High-res Desktop
-            1400: {
-                slidesPerView: 4,
-            },
-            // Ultra-wide
-            1800: {
-                slidesPerView: 5,
+            breakpoints: {
+                // Mobile Landscape
+                576: {
+                    slidesPerView: 2,
+                },
+                // Tablet
+                992: {
+                    slidesPerView: 3,
+                },
+                // High-res Desktop
+                1400: {
+                    slidesPerView: 4,
+                },
+                // Ultra-wide
+                1800: {
+                    slidesPerView: 5,
+                }
             }
-        }
+        });
     });
-});
 </script>

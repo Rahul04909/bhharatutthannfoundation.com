@@ -152,6 +152,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                                 <li><a class="dropdown-item" href="pages/about/index.php">Overview</a></li>
+                                <li><a class="dropdown-item" href="pages/about/our-vision/index.php">Our Vision</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

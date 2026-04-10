@@ -186,6 +186,7 @@
                                 <li><a class="dropdown-item" href="pages/about/index.php">Overview</a></li>
                                 <li><a class="dropdown-item" href="pages/about/our-vision/index.php">Our Vision</a></li>
                                 <li><a class="dropdown-item" href="pages/about/our-aim/index.php">Our Aim</a></li>
+                                <li><a class="dropdown-item" href="pages/gau-seva/index.php">Gau Seva</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -218,6 +219,7 @@
                                         Camp</a></li>
                                 <li><a class="dropdown-item" href="pages/covid-relief/index.php">Covid 19 Relief</a>
                                 </li>
+                                <li><a class="dropdown-item" href="pages/gau-seva/index.php">Gau Seva</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">

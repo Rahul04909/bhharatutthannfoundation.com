@@ -73,11 +73,7 @@
             background-size: cover;
             background-position: center;
             min-height: 400px;
-            transition: transform 0.6s ease;
-        }
-
-        .vision-block:hover .vision-image {
-            transform: scale(1.02);
+            transition: all 0.4s ease;
         }
 
         .bg-dark-blue { background-color: #051b60; color: #ffffff; }
@@ -124,8 +120,8 @@
 </head>
 <body>
 
-    <!-- Include Header -->
-    <?php include_once 'includes/header.php'; ?>
+    /* Include Header */
+    <?php include_once '../../../includes/header.php'; ?>
 
     <!-- Hero Header -->
     <section class="page-header">
@@ -146,7 +142,7 @@
                     Our vision is to create a self-reliant, harmonious, and culturally vibrant society that empowers individuals to lead lives of dignity, independence, and purpose. Rooted in the timeless values of sanskar (cultural values) and seva (selfless service), we aim to build strong, compassionate communities dedicated to holistic development.
                 </p>
             </div>
-            <div class="vision-image" style="background-image: url('assets/images/pages/our-vision-1.jpg');"></div>
+            <div class="vision-image" style="background-image: url('assets/images/pages/our-vision-1.jpg'); border: 15px solid #ffffff; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"></div>
         </div>
 
         <!-- Block 2: Marginilized Support -->
@@ -157,7 +153,7 @@
                     We envision a world where marginalized communities are no longer vulnerable but thrive with access to education, healthcare, and sustainable livelihood opportunities. By fostering ethical leadership, cultural preservation, and community resilience, we strive to bridge the gap between traditional values and modern progress.
                 </p>
             </div>
-            <div class="vision-image" style="background-image: url('assets/images/pages/our-vision-2.jpg');"></div>
+            <div class="vision-image" style="background-image: url('assets/images/pages/our-vision-2.jpg'); border: 15px solid #ffffff; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"></div>
         </div>
 
         <!-- Block 3: Environmental & Heritage -->
@@ -179,7 +175,7 @@
     </section>
 
     <!-- Include Footer -->
-    <?php include_once 'includes/footer.php'; ?>
+    <?php include_once '../../../includes/footer.php'; ?>?>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

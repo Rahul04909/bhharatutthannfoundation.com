@@ -60,7 +60,7 @@
 
         /* Section Styling */
         .vision-section {
-            padding: 0;
+            padding: 0 0 80px 0; /* Added bottom padding to separate from the orange footer */
             margin: 0;
             width: 100%;
         }
@@ -69,6 +69,7 @@
             display: flex;
             align-items: stretch;
             min-height: 500px;
+            margin-bottom: 40px; /* Added margin to cleanly separate the blocks */
         }
 
         .vision-content {

@@ -371,6 +371,30 @@ $active_page = $active_pageInfo['active_page'] ?? null;
                 justify-content: flex-start !important;
             }
         }
+        
+        /* Welcome Blinking Text Styling */
+        @keyframes smoothBlink {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.02); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .welcome-blink {
+            animation: smoothBlink 2.5s infinite ease-in-out;
+            color: var(--primary-green);
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(40,167,69,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .welcome-blink:hover {
+            animation: none;
+            transform: scale(1.05);
+            text-shadow: 0 4px 15px rgba(255,193,7,0.4);
+            color: var(--accent-yellow);
+        }
     </style>
 </head>
 
@@ -379,38 +403,22 @@ $active_page = $active_pageInfo['active_page'] ?? null;
     <div class="wrapper">
         <!-- Wrapper started -->
 
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between align-items-center">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <div class="nav-link">
-                        <i class="fas fa-th-large"></i>
+                    <div class="nav-link" data-widget="pushmenu" role="button" style="cursor:pointer;">
+                        <i class="fas fa-bars"></i>
                     </div>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="./" class="nav-link">Home</a>
                 </li>
             </ul>
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" name="search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="#messages">
-                        <i class="far fa-comments"></i>
-                        <span class="badge badge-danger navbar-badge">2</span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown"><a class="nav-link" href="#notifications">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">5</span>
-                    </a>
+            
+            <div class="mx-auto text-center" style="display: flex; align-items: center; justify-content: center; width: 100%;">
+                <h4 class="mb-0 welcome-blink">✨ Welcome to Bharat Uthaan Foundation ✨</h4>
+            </div>
+
+            <ul class="navbar-nav">
+                 <li class="nav-item d-none d-sm-inline-block">
+                    <a href="./" class="nav-link" style="color:transparent;">_</a>
                 </li>
             </ul>
         </nav>

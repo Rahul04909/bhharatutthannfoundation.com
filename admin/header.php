@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 
 $menuItems = [
@@ -429,10 +435,10 @@ $active_page = $active_pageInfo['active_page'] ?? null;
                 <div class="user-panel mt-3 pb-3 mb-3">
                     <a href="./profile.php" class="d-flex">
                         <div class="image">
-                            <img src="./src/images/user-avtar.png" class="img-circle elevation-2 bg-white" alt="User Image">
+                            <img src="<?= htmlspecialchars($_SESSION['admin_profile_image'] ?? './src/images/user-avtar.png') ?>" class="img-circle elevation-2 bg-white" alt="User Image">
                         </div>
                         <div class="info">
-                            Rahul
+                            <?= htmlspecialchars($_SESSION['admin_name'] ?? 'Admin') ?>
                         </div>
                     </a>
                 </div>

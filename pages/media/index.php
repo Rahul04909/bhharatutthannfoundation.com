@@ -39,30 +39,54 @@
     </section>
     <section class="section-padding bg-white">
         <div class="container">
-            <h2 class="section-title center">Latest Updates</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="gallery-item"><img src="https://picsum.photos/seed/news1/600/400" alt="Media Update"></div>
-                    <div class="content-block"><h3>Mega Health Camp Success</h3><p>Successfully serving over 2000 beneficiaries in our recent rural camp last month.</p></div>
+            <h2 class="section-title center text-center mb-5">Our Gallery</h2>
+
+            <?php
+            // Fetch gallery items securely
+            require_once '../../database/db_config.php';
+            $galleryItems = [];
+            try {
+                $stmt = $pdo->query("SELECT * FROM gallery ORDER BY id DESC");
+                $galleryItems = $stmt->fetchAll();
+            } catch (\PDOException $e) {
+                // gracefully bypass
+            }
+            ?>
+
+            <?php if (count($galleryItems) === 0): ?>
+                <div class="text-center text-muted">
+                    <p>No media available at the moment. Please check back later.</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="gallery-item"><img src="https://picsum.photos/seed/news2/600/400" alt="Media Update"></div>
-                    <div class="content-block"><h3>Green Earth Initiative</h3><p>Our plantation drive reached a milestone of 10,000 trees planted this season.</p></div>
+            <?php else: ?>
+                <div class="row g-4">
+                    <?php foreach ($galleryItems as $item): ?>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="gallery-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#imageModal<?= $item['id'] ?>" style="cursor: pointer;">
+                                <img src="<?= htmlspecialchars(str_replace('../', '', $item['thumbnail_path'])) ?>" alt="<?= htmlspecialchars($item['title']) ?>" class="img-fluid w-100">
+                                <div class="p-3 bg-light border-top text-center">
+                                    <h6 class="mb-0 text-dark" style="font-weight: 600;"><?= htmlspecialchars($item['title']) ?></h6>
+                                    <small class="text-muted"><?= htmlspecialchars($item['category']) ?></small>
+                                </div>
+                            </div>
+
+                            <!-- Modal for viewing full image -->
+                            <div class="modal fade" id="imageModal<?= $item['id'] ?>" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                    <div class="modal-content bg-transparent border-0">
+                                        <div class="modal-header border-0 pb-0">
+                                            <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
+                                        </div>
+                                        <div class="modal-body text-center pt-0">
+                                            <img src="<?= htmlspecialchars(str_replace('../', '', $item['image_path'])) ?>" alt="<?= htmlspecialchars($item['title']) ?>" class="img-fluid rounded shadow w-100 mb-3" style="max-height: 80vh; object-fit: contain;">
+                                            <h4 class="text-white"><?= htmlspecialchars($item['title']) ?></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-                <div class="col-md-4">
-                    <div class="gallery-item"><img src="https://picsum.photos/seed/news3/600/400" alt="Media Update"></div>
-                    <div class="content-block"><h3>Award for Excellence</h3><p>Foundation recognized for outstanding contribution to women empowerment.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title">Press Coverage</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-6"><div class="content-block"><h3>Voices in the News</h3><p>Bhharat Utthann Foundation’s transparency and ground-level impact have been featured in several leading national and regional publications. These stories help us amplify our message and reach more potential partners who can support our mission.</p></div></div>
-                <div class="col-lg-6"><div class="img-container"><img src="https://picsum.photos/seed/press/800/500" alt="Press Release"></div></div>
-            </div>
+            <?php endif; ?>
         </div>
     </section>
     <?php include_once '../../includes/footer.php'; ?>

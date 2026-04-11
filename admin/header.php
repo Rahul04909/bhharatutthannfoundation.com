@@ -21,6 +21,13 @@ $menuItems = [
         "pages" => [
             ["title" => "Profile", "url" => "profile.php"]
         ],
+    ],
+    [
+        "menuTitle" => "Media",
+        "icon" => "fas fa-images",
+        "pages" => [
+            ["title" => "Gallery", "url" => "gallery.php"]
+        ],
     ]
 ];
 

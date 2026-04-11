@@ -87,10 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-logo img {
             max-width: 150px;
             height: auto;
-            border-radius: 50%;
-            padding: 5px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             margin-bottom: 1rem;
         }
 
@@ -155,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="login-box">
         <div class="login-logo">
-            <img src="./src/images/prayag-computer-logo.png" alt="Logo">
+            <img src="../assets/logo.png" alt="Logo">
             <h2>Admin Login</h2>
         </div>
         

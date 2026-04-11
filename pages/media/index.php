@@ -65,7 +65,6 @@
                                 <img src="<?= htmlspecialchars(str_replace('../', '', $item['thumbnail_path'])) ?>" alt="<?= htmlspecialchars($item['title']) ?>" class="img-fluid w-100">
                                 <div class="p-3 bg-light border-top text-center">
                                     <h6 class="mb-0 text-dark" style="font-weight: 600;"><?= htmlspecialchars($item['title']) ?></h6>
-                                    <small class="text-muted"><?= htmlspecialchars($item['category']) ?></small>
                                 </div>
                             </div>
 

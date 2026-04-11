@@ -35,8 +35,7 @@ if (isset($_GET['delete'])) {
 
 // Handle Upload Form Submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'upload') {
-    $title = trim($_POST['title']);
-    $category = trim($_POST['category'] ?? 'General');
+$title = trim($_POST['title']);
     
     if (empty($title) || empty($_FILES['image']['tmp_name'])) {
         $error = "Title and Image are required.";
@@ -63,10 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             $thumb->toJpeg(80)->save($thumbImagePath);
 
             // Insert into Database
-            $stmt = $pdo->prepare("INSERT INTO gallery (title, category, image_path, thumbnail_path) VALUES (:title, :category, :img, :thumb)");
+            $stmt = $pdo->prepare("INSERT INTO gallery (title, image_path, thumbnail_path) VALUES (:title, :img, :thumb)");
             $stmt->execute([
                 'title' => $title,
-                'category' => $category,
                 'img' => $mainImagePath,
                 'thumb' => $thumbImagePath
             ]);
@@ -109,15 +107,6 @@ $items = $pdo->query("SELECT * FROM gallery ORDER BY id DESC")->fetchAll();
                         <input type="text" class="form-control" id="title" name="title" required placeholder="Enter title">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="category">Category</label>
-                        <select class="form-control" id="category" name="category">
-                            <option value="General">General</option>
-                            <option value="Events">Events</option>
-                            <option value="Health">Health</option>
-                            <option value="Education">Education</option>
-                        </select>
-                    </div>
-                    <div class="form-group mb-3">
                         <label for="image">Choose Image <span class="text-danger">*</span></label>
                         <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
                         <small class="text-muted">Image will be automatically resized and optimized.</small>
@@ -143,7 +132,6 @@ $items = $pdo->query("SELECT * FROM gallery ORDER BY id DESC")->fetchAll();
                             <tr>
                                 <th>Thumbnail</th>
                                 <th>Title</th>
-                                <th>Category</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -160,7 +148,6 @@ $items = $pdo->query("SELECT * FROM gallery ORDER BY id DESC")->fetchAll();
                                         <img src="<?= htmlspecialchars($item['thumbnail_path']) ?>" alt="thumbnail" style="width: 100px; height: auto; border-radius: 4px;">
                                     </td>
                                     <td><?= htmlspecialchars($item['title']) ?></td>
-                                    <td><span class="badge bg-secondary"><?= htmlspecialchars($item['category']) ?></span></td>
                                     <td><?= date('d M, Y', strtotime($item['created_at'])) ?></td>
                                     <td>
                                         <!-- Note: using native alert fallback here, or standard confirm -->

@@ -12,7 +12,6 @@ try {
     CREATE TABLE IF NOT EXISTS `gallery` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `title` varchar(255) NOT NULL,
-        `category` varchar(50) DEFAULT 'General',
         `image_path` varchar(255) NOT NULL,
         `thumbnail_path` varchar(255) NOT NULL,
         `created_at` timestamp NOT NULL DEFAULT current_timestamp(),

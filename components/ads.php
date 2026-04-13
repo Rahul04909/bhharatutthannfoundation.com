@@ -29,5 +29,5 @@
 
 <div class="ad-banner-section">
     <div class="debug-label">Banner Component</div>
-    <img src="assets/images/banners/women-empowerment.jpeg" alt="Empowerment Banner" class="ad-banner-img">
+    <img src="assets/images/frontend/banner-ads.png" alt="Empowerment Banner" class="ad-banner-img">
 </div>

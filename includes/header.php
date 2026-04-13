@@ -183,9 +183,10 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                <li><a class="dropdown-item" href="pages/about/index.php">Overview</a></li>
+                                <!-- <li><a class="dropdown-item" href="pages/about/index.php">Overview</a></li> -->
                                 <li><a class="dropdown-item" href="pages/about/our-vision/index.php">Our Vision</a></li>
-                                <li><a class="dropdown-item" href="pages/about/our-mission/index.php">Our Mission</a></li>
+                                <li><a class="dropdown-item" href="pages/about/our-mission/index.php">Our Mission</a>
+                                </li>
                                 <li><a class="dropdown-item" href="pages/about/our-aim/index.php">Our Aim</a></li>
                                 <li><a class="dropdown-item" href="pages/about/our-sutra/index.php">Our Sutra</a></li>
                                 <li><a class="dropdown-item" href="pages/gau-seva/index.php">Gau Seva</a></li>

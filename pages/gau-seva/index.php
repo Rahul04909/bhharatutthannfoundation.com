@@ -120,7 +120,7 @@
             opacity: 0.95;
             margin-bottom: 20px;
         }
-        
+
         .project-text:last-child {
             margin-bottom: 0;
         }
@@ -170,10 +170,16 @@
             <div class="project-content bg-white">
                 <h2 class="project-title" style="color: #051b60;">Spiritual & Cultural Responsibility</h2>
                 <p class="project-text">
-                    At Bharat Utthann Foundation, Gau Seva (cow service) is seen as both a spiritual and cultural responsibility. We recognize the vital role cows play in India’s agricultural, economic, and spiritual traditions. Our efforts focus on the protection, care, and nourishment of cows, ensuring they are treated with respect and compassion.
+                    At Bharat Utthann Foundation, Gau Seva (cow service) is seen as both a spiritual and cultural
+                    responsibility. We recognize the vital role cows play in India’s agricultural, economic, and
+                    spiritual traditions. Our efforts focus on the protection, care, and nourishment of cows, ensuring
+                    they are treated with respect and compassion.
                 </p>
                 <p class="project-text">
-                    The Foundation encourages sustainable practices in cow rearing, promoting environmentally friendly and rural livelihood-supporting methods. Through Gau Seva, we aim to inspire self-reliance in communities, preserve India’s cultural heritage, and strengthen the bond between humanity and nature.
+                    The Foundation encourages sustainable practices in cow rearing, promoting environmentally friendly
+                    and rural livelihood-supporting methods. Through Gau Seva, we aim to inspire self-reliance in
+                    communities, preserve India’s cultural heritage, and strengthen the bond between humanity and
+                    nature.
                 </p>
             </div>
             <div class="project-image"

@@ -68,19 +68,18 @@ function getEmbedUrl($url) {
         }
         body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #333; }
         
-        .event-hero { position: relative; height: 500px; display: flex; align-items: center; background-color: #000; color: #fff; overflow: hidden; }
-        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: blur(3px); transform: scale(1.1); }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(0deg, var(--primary-blue), transparent); }
-        .hero-content { position: relative; z-index: 10; width: 100%; }
-
-        .hero-badge { display: inline-block; padding: 6px 15px; border-radius: 50px; background: var(--accent-orange); font-size: 14px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .event-header { background-color: #f8f9fa; padding: 60px 0; border-bottom: 1px solid #eee; text-align: left; }
+        .hero-badge { display: inline-block; padding: 6px 15px; border-radius: 50px; background: var(--accent-orange); font-size: 14px; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
         .hero-badge.past { background: #6c757d; }
-        .hero-title { font-family: 'Poppins', sans-serif; font-size: 48px; font-weight: 700; color: var(--accent-yellow); line-height: 1.2; margin-bottom: 25px; }
+        .hero-title { font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; color: var(--primary-blue); line-height: 1.2; margin-bottom: 20px; }
         .hero-meta { display: flex; gap: 30px; flex-wrap: wrap; }
-        .hero-meta-item { display: flex; align-items: center; gap: 10px; font-size: 18px; }
-        .hero-meta-item i { color: var(--accent-yellow); font-size: 24px; }
+        .hero-meta-item { display: flex; align-items: center; gap: 10px; font-size: 16px; color: #555; }
+        .hero-meta-item i { color: var(--accent-orange); font-size: 20px; }
 
-        .section-padding { padding: 80px 0; }
+        .event-cover-wrapper { width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: #f0f0f0; }
+        .event-cover-wrapper img { width: 100%; height: auto; max-height: 600px; object-fit: cover; display: block; }
+
+        .section-padding { padding: 60px 0; }
         .section-title { font-family: 'Poppins', sans-serif; color: var(--primary-blue); font-weight: 700; position: relative; padding-bottom: 15px; margin-bottom: 30px; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background: var(--accent-orange); }
 
@@ -102,43 +101,41 @@ function getEmbedUrl($url) {
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 32px; }
-            .event-hero { height: 400px; }
+            .hero-title { font-size: 28px; }
+            .event-header { padding: 40px 0; }
             .hero-meta { gap: 15px; }
-            .hero-meta-item { font-size: 16px; }
+            .hero-meta-item { font-size: 14px; }
         }
     </style>
 </head>
 <body>
     <?php include_once '../../includes/header.php'; ?>
 
-    <section class="event-hero">
-        <img src="<?= $event['cover_image'] ? htmlspecialchars($event['cover_image']) : 'assets/images/default-event.jpg' ?>" class="hero-bg" alt="bg">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
+    <section class="event-header">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-12">
                     <span class="hero-badge <?= $isPast ? 'past' : '' ?>"><?= $isPast ? 'Past Event' : 'Upcoming Event' ?></span>
                     <h1 class="hero-title"><?= htmlspecialchars($event['title']) ?></h1>
                     <div class="hero-meta">
                         <div class="hero-meta-item">
                             <i class="fas fa-calendar-alt"></i>
                             <div>
-                                <small class="d-block text-uppercase opacity-75" style="font-size: 12px;">Date</small>
+                                <small class="d-block text-muted text-uppercase" style="font-size: 11px;">Date</small>
                                 <strong><?= date('d M, Y', strtotime($event['event_date'])) ?></strong>
                             </div>
                         </div>
                         <div class="hero-meta-item">
                             <i class="fas fa-clock"></i>
                             <div>
-                                <small class="d-block text-uppercase opacity-75" style="font-size: 12px;">Time</small>
+                                <small class="d-block text-muted text-uppercase" style="font-size: 11px;">Time</small>
                                 <strong><?= $event['event_time'] ? date('h:i A', strtotime($event['event_time'])) : 'TBA' ?></strong>
                             </div>
                         </div>
                         <div class="hero-meta-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <small class="d-block text-uppercase opacity-75" style="font-size: 12px;">Location</small>
+                                <small class="d-block text-muted text-uppercase" style="font-size: 11px;">Location</small>
                                 <strong><?= htmlspecialchars($event['location'] ?? 'Online / TBA') ?></strong>
                             </div>
                         </div>
@@ -152,6 +149,12 @@ function getEmbedUrl($url) {
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-8">
+                    <?php if ($event['cover_image']): ?>
+                        <div class="event-cover-wrapper">
+                            <img src="<?= htmlspecialchars($event['cover_image']) ?>" alt="<?= htmlspecialchars($event['title']) ?>">
+                        </div>
+                    <?php endif; ?>
+                    
                     <h2 class="section-title">Event Overview</h2>
                     <div class="event-details-content mb-5">
                         <?= nl2br($event['description'] ?? 'No description available.') ?>

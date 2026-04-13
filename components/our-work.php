@@ -25,17 +25,17 @@ $services = [
     [
         "title" => "Self Reliance in Women",
         "desc" => "Equipping women with skills and resources to become independent and financially self-sufficient.",
-        "img" => "https://picsum.photos/seed/self_reliance/600/600"
+        "img" => "../assets/images/frontend/womens-self-reliance .jpeg"
     ],
     [
         "title" => "Self Defence Camp",
         "desc" => "Teaching women and girls practical self-defense skills to ensure personal safety and confidence.",
-        "img" => "https://picsum.photos/seed/defence/600/600"
+        "img" => "../assets/images/frontend/self-defence .jpeg"
     ],
     [
         "title" => "Skill Development",
         "desc" => "Providing vocational training and skills to youth for better job opportunities and self-reliance.",
-        "img" => "https://picsum.photos/seed/skill_dev/600/600"
+        "img" => "../assets/images/frontend/skill-development.jpeg"
     ],
     [
         "title" => "Handicapped Assistance",
@@ -45,12 +45,12 @@ $services = [
     [
         "title" => "Cultural Camps",
         "desc" => "Preserving and promoting India’s cultural heritage through traditional arts, crafts, and values.",
-        "img" => "https://picsum.photos/seed/culture_camp/600/600"
+        "img" => "../assets/images/frontend/cultural-camp.jpeg"
     ],
     [
         "title" => "Swachh Bharat Abhiyan",
         "desc" => "Promoting cleanliness, hygiene, and sanitation in communities for a healthier environment.",
-        "img" => "https://picsum.photos/seed/swachh/600/600"
+        "img" => "../assets/images/frontend/swach-bharat.jpeg"
     ],
     [
         "title" => "Blood Donation Camp",
@@ -60,7 +60,7 @@ $services = [
     [
         "title" => "Covid 19",
         "desc" => "Bharat Utthann Foundation supports COVID-19 awareness, relief, and recovery efforts.",
-        "img" => "https://picsum.photos/seed/covid19/600/600"
+        "img" => "../assets/images/frontend/covid-19.jpeg"
     ]
 ];
 ?>

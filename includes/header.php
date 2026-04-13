@@ -228,6 +228,9 @@
                             <a class="nav-link" href="pages/finance/index.php">Finance</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="pages/events/index.php">Events</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="pages/media/index.php">Media</a>
                         </li>
                         <li class="nav-item">

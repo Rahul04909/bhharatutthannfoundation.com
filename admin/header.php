@@ -28,6 +28,14 @@ $menuItems = [
         "pages" => [
             ["title" => "Gallery", "url" => "gallery.php"]
         ],
+    ],
+    [
+        "menuTitle" => "Events Management",
+        "icon" => "fas fa-calendar-alt",
+        "pages" => [
+            ["title" => "All Events", "url" => "events.php"],
+            ["title" => "Add New Event", "url" => "event-add.php"]
+        ],
     ]
 ];
 

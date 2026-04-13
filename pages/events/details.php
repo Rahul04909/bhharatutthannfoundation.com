@@ -157,7 +157,7 @@ function getEmbedUrl($url) {
                     
                     <h2 class="section-title">Event Overview</h2>
                     <div class="event-details-content mb-5">
-                        <?= nl2br($event['description'] ?? 'No description available.') ?>
+                        <?= $event['description'] ?? 'No description available.' ?>
                     </div>
 
                     <?php if ($event['video_url']): ?>

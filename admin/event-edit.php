@@ -270,4 +270,27 @@ $galleryItems = $gallery->fetchAll();
     </div>
 </div>
 
+<!-- Include Summernote CSS/JS -->
+<link href="../vendor/summernote/summernote/dist/summernote-lite.css" rel="stylesheet">
+<script src="../vendor/summernote/summernote/dist/summernote-lite.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#description').summernote({
+            placeholder: 'Edit event description...',
+            tabsize: 2,
+            height: 350,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    });
+</script>
+
 <?php require_once 'footer.php'; ?>

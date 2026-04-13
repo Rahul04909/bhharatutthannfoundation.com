@@ -219,7 +219,7 @@ $galleryItems = $gallery->fetchAll();
 
                     <div class="form-group mb-3">
                         <label for="description">Event Description</label>
-                        <textarea class="form-control" id="description" name="description" rows="10"><?= htmlspecialchars($event['description'] ?? '') ?></textarea>
+                        <textarea class="form-control" id="description" name="description" rows="10" style="display:none;"><?= htmlspecialchars($event['description'] ?? '') ?></textarea>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -270,9 +270,9 @@ $galleryItems = $gallery->fetchAll();
     </div>
 </div>
 
-<!-- Include Summernote CSS/JS -->
-<link href="../vendor/summernote/summernote/dist/summernote-lite.css" rel="stylesheet">
-<script src="../vendor/summernote/summernote/dist/summernote-lite.js"></script>
+<!-- Include Summernote CSS/JS (CDN for stability) -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -288,7 +288,12 @@ $galleryItems = $gallery->fetchAll();
                 ['table', ['table']],
                 ['insert', ['link', 'picture', 'video']],
                 ['view', ['fullscreen', 'codeview', 'help']]
-            ]
+            ],
+            callbacks: {
+                onInit: function() {
+                    console.log('Summernote Edit is launched');
+                }
+            }
         });
     });
 </script>

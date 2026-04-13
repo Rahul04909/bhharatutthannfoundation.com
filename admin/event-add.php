@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="form-group mb-3">
                         <label for="description">Event Description</label>
-                        <textarea class="form-control" id="description" name="description" rows="6" placeholder="Tell more about the event..."></textarea>
+                        <textarea class="form-control" id="description" name="description" rows="6" placeholder="Tell more about the event..." style="display:none;"></textarea>
                     </div>
                 </div>
                 <div class="card-footer text-right">
@@ -141,9 +141,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 
-<!-- Include Summernote CSS/JS -->
-<link href="../vendor/summernote/summernote/dist/summernote-lite.css" rel="stylesheet">
-<script src="../vendor/summernote/summernote/dist/summernote-lite.js"></script>
+<!-- Include Summernote CSS/JS (CDN for stability) -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -154,12 +154,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             toolbar: [
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],
+                // ['fontname', ['fontname']],
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['table', ['table']],
                 ['insert', ['link', 'picture', 'video']],
                 ['view', ['fullscreen', 'codeview', 'help']]
-            ]
+            ],
+            callbacks: {
+                onInit: function() {
+                    console.log('Summernote is launched');
+                }
+            }
         });
     });
 </script>

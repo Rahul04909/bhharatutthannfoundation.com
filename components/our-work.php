@@ -10,7 +10,7 @@ $services = [
     [
         "title" => "Health Checkup Camps",
         "desc" => "Providing free medical checkups and health awareness to underserved communities.",
-        "img" => "https://picsum.photos/seed/health_camp/600/600"
+        "img" => "../assets/images/frontend/health-checkup-camps.jpeg"
     ],
     [
         "title" => "Water Conservation",
@@ -40,7 +40,7 @@ $services = [
     [
         "title" => "Handicapped Assistance",
         "desc" => "Supporting differently-abled individuals with mobility aids, healthcare, and access to opportunities.",
-        "img" => "https://picsum.photos/seed/handicap/600/600"
+        "img" => "../assets/images/frontend/handicapped assistance .jpeg"
     ],
     [
         "title" => "Cultural Camps",
